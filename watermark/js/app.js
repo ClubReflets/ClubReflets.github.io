@@ -2,7 +2,7 @@ function toggleGoButton() {
     const name = document.getElementById('name').value
     const button = document.getElementById('go')
 
-    if(name) 
+    if(name)
         button.className = 'btn'
     else
         button.className = 'btn disabled-btn'
@@ -26,21 +26,21 @@ function replaceName() {
                    .replace('%C3%AF', 'ï')
                    .replace('%C3%8F', 'Ï')
                    .replace('%C3%AE', 'î')
-                   .replace('%C3%8E', 'Î')                   
-        divName.innerHTML = name
+                   .replace('%C3%8E', 'Î')
+        divName.innerHTML = name.toUpperCase()
     }
 }
 
 function generate () {
     replaceName()
-    
+
     html2canvas(document.getElementById('watermark'), {
         onrendered: function (canvas) {
             let link = document.getElementById('downloadlink')
             link.href = canvas.toDataURL()
             link.download = "watermark.png"
             link.click()
-        }, 
+        },
         useCORS: true,
         allowTaint: true
     })
@@ -50,7 +50,7 @@ function generate () {
 // Helpers
 function readURLParamter(param) {
 	let vars = {}
-	window.location.href.replace( location.hash, '' ).replace( 
+	window.location.href.replace( location.hash, '' ).replace(
 		/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
 		function( m, key, value ) { // callback
 			vars[key] = value !== undefined ? value : ''
@@ -58,8 +58,7 @@ function readURLParamter(param) {
 	);
 
 	if ( param ) {
-		return vars[param] ? vars[param] : null	
+		return vars[param] ? vars[param] : null
 	}
 	return vars
 }
-
