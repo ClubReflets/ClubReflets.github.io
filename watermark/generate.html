@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Watermark Generated!</title>
+    <style>
+    @font-face {
+        font-family: "texgyreheros";
+        src: url("fonts/texgyreheros-bold-webfont.woff") format('woff');
+    }
+    #watermark {
+        font-family: 'texgyreheros', sans-serif;
+        position: relative;
+        /*background-color: #000;*/
+        color: #ffffff; 
+        width: 900px;
+        height: 270px;
+        font-size: 5rem;
+    } 
+    .big-title {
+        position: absolute; 
+        top: 25px; 
+        left: 280px;
+        font-size: 120px;
+    }
+    .small-title {
+        width: 580px;
+        position: absolute;
+        top: 165px;
+        left: 260px;
+        font-size: 60px;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <a href="#" style="display:none" id="downloadlink"></a>
+    <div id="watermark">
+        <img src="images/logo_reflets.png" alt="">
+        <span class="big-title">REFLETS</span>
+        <div class="small-title">
+            <span id="watermark_name"></span>
+        </div>   
+    </div>
+    
+    <script src="js/html2canvas.min.js"></script>
+    <script src="js/app.js"></script>    
+    <script>
+        window.onload = generate() 
+    </script>
+</body>
+</html>
