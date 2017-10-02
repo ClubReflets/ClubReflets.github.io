@@ -23,6 +23,10 @@ function replaceName() {
                    .replace('%C3%89', 'É')
                    .replace('%C3%A8', 'è')
                    .replace('%C3%88', 'È')
+                   .replace('%C3%AF', 'ï')
+                   .replace('%C3%8F', 'Ï')
+                   .replace('%C3%AE', 'î')
+                   .replace('%C3%8E', 'Î')                   
         divName.innerHTML = name
     }
 }
