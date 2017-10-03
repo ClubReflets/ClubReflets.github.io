@@ -18,15 +18,7 @@ function replaceName() {
 
     if (name) {
         const divName = document.getElementById('watermark_name')
-        name = name.replace('%20', ' ')
-                   .replace('%C3%A9', 'é')
-                   .replace('%C3%89', 'É')
-                   .replace('%C3%A8', 'è')
-                   .replace('%C3%88', 'È')
-                   .replace('%C3%AF', 'ï')
-                   .replace('%C3%8F', 'Ï')
-                   .replace('%C3%AE', 'î')
-                   .replace('%C3%8E', 'Î')
+        name = decodeURI(name)
         divName.innerHTML = name.toUpperCase()
     }
 }
